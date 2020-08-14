@@ -2,13 +2,13 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button';
 
-import { ReactComponent as CheckMark } from '../../icons/checkmark.svg';
-import { ReactComponent as ArrowRight } from '../../icons/arrow-right.svg';
-import { ReactComponent as ArrowLeft } from '../../icons/arrow-left.svg';
-import { ReactComponent as DotHorizontal } from '../../icons/dot-horizontal.svg';
-import { ReactComponent as Star } from '../../icons/star.svg';
+const CheckMark = require('../../icons/checkmark.svg');
+const ArrowRight = require('../../icons/arrow-right.svg');
+const ArrowLeft = require('../../icons/arrow-left.svg');
+const DotHorizontal = require('../../icons/dot-horizontal.svg');
+const Star = require('../../icons/star.svg');
 
-import settingsStyles from '../../settings_styles.module.css';
+const settingsStyles = require('../../settings_styles.module.css');
 
 interface Props {
   onExpandAllClick: () => void;

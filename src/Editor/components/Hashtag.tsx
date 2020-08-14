@@ -1,14 +1,11 @@
 import * as React from 'react';
 
-import { AppContext } from '../../AppContext';
-
 interface Props {
   children: Array<React.ReactElement>;
+  handleSearchInputChange?: (searchText: string) => void;
 }
 
-function Hashtag({ children }: Props) {
-  const { handleSearchInputChange } = React.useContext(AppContext);
-
+function Hashtag({ children, handleSearchInputChange }: Props) {
   return (
     <button
       style={{

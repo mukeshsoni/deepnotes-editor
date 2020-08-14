@@ -1,6 +1,6 @@
 import { hasCollapsedAntecedent } from '../has_collapsed_antecedent';
 
-import { expandBlock, collapseBlock } from '../collapse_expand_block';
+import { collapseBlock } from '../collapse_expand_block';
 
 import { getBlock, sampleStateLarge } from '../../testHelpers';
 import pluckGoodies from '../pluck_goodies';

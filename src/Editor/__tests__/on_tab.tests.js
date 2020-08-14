@@ -24,11 +24,6 @@ const fakeTabEvent = {
   preventDefault: noop,
 };
 
-const fakeShiftTabEvent = {
-  ...fakeTabEvent,
-  shiftKey: true,
-};
-
 const MAX_DEPTH = 10;
 
 function indentBlock(editorState, blockIndex, zoomedInItemId) {

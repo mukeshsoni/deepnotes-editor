@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 
 import { EditorContext } from './EditorDispatchContext';
-import { ReactComponent as DownArrow } from '../../icons/down-arrow.svg';
+const DownArrow = require('../../icons/down-arrow.svg');
 
 interface Props {
   collapsed: boolean;

@@ -87,8 +87,7 @@ function getPosAfterAdjustment(
 function adjustBlockDepthForContentState(
   contentState: ContentState,
   selectionState: SelectionState,
-  adjustment: number,
-  maxDepth: number
+  adjustment: number
 ): ContentState {
   // TODO: can we not use getBlocksWithItsChildren here? Probably not since we
   // need any grandchildren and their children and theirs
@@ -227,8 +226,7 @@ export function onTab(
   const withAdjustment = adjustBlockDepthForContentState(
     content,
     selection,
-    shiftKey ? -1 : 1,
-    maxDepth
+    shiftKey ? -1 : 1
   );
 
   // Always, always use this method to modify editorState when in doubt about

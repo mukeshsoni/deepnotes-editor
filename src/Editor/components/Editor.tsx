@@ -13,7 +13,6 @@ import {
 } from 'draft-js';
 
 import { EditorContext } from './EditorDispatchContext';
-import { ReactComponent as PlusSign } from '../../icons/plus-sign.svg';
 
 import debounce from '../../debounce';
 import Menu from './Menu';
@@ -60,6 +59,8 @@ import 'draft-js/dist/Draft.css';
 import './editor_styles.css';
 import { hasCollapsedAntecedent } from '../has_collapsed_antecedent';
 import { sanitizePosAndDepthInfo } from '../sanitize_pos_and_depth_info';
+
+const PlusSign = require('../../icons/plus-sign.svg');
 
 declare global {
   interface Window {
@@ -365,6 +366,8 @@ function DeepnotesEditor(props: Props) {
         },
       };
     }
+
+    return undefined;
   }
 
   const editor = React.useRef<any>(null);
