@@ -1,0 +1,12 @@
+.DraftEditor-root {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .editor-wrapper {
+    padding: 30px;
+    padding-top: 20px;
+    border: none;
+    box-shadow: unset;
+  }
+}
