@@ -18,12 +18,6 @@ import { ROOT_KEY, BASE_POS } from '../../constants';
 import DB, { arrToObj } from '../../object_db.ts';
 import { loadFromDb } from '../../load_from_db';
 
-const noop = () => {};
-
-const fakeTabEvent = {
-  preventDefault: noop,
-};
-
 const MAX_DEPTH = 10;
 
 function indentBlock(editorState, blockIndex, zoomedInItemId) {
