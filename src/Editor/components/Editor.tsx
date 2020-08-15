@@ -54,13 +54,14 @@ import {
 import useDocumentTitle from '../../hooks/document-title';
 import usePrevious from '../../hooks/previous';
 
-import 'draft-js/dist/Draft.css';
-
-import './editor_styles.css';
 import { hasCollapsedAntecedent } from '../has_collapsed_antecedent';
 import { sanitizePosAndDepthInfo } from '../sanitize_pos_and_depth_info';
 
-const PlusSign = require('../../icons/plus-sign.svg');
+import PlusSign from '../../icons/PlusSign';
+
+import 'draft-js/dist/Draft.css';
+import '../../tailwind_generated.css';
+import './editor_styles.css';
 
 declare global {
   interface Window {

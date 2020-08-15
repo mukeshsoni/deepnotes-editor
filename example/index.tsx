@@ -1,12 +1,15 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Thing } from '../.';
+import Editor from '../.';
+
+import '../src/tailwind_generated.css';
+import '../src/Editor/components/editor_styles.css';
 
 const App = () => {
   return (
     <div>
-      <Thing />
+      <Editor />
     </div>
   );
 };

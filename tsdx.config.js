@@ -1,23 +1,23 @@
-const svgr = require('@svgr/rollup').default;
 const postcss = require('rollup-plugin-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
 module.exports = {
   rollup(config, options) {
-    config.plugins = [
-      svgr({
-        // configure however you like, this is just an example
-        ref: true,
-        memo: true,
-        svgoConfig: {
-          plugins: [{ removeViewBox: false }],
-        },
-      }),
+    config.plugins.push(
       postcss({
         modules: true,
-      }),
-      ...config.plugins,
-    ];
-
+        plugins: [
+          autoprefixer(),
+          cssnano({
+            preset: 'default',
+          }),
+        ],
+        inject: false,
+        // only write out CSS for the first bundle (avoids pointless extra files):
+        extract: !!options.writeMeta,
+      })
+    );
     return config;
   },
 };

@@ -2,8 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { ContentBlock, EditorBlock } from 'draft-js';
 import Disc from './Disc';
-const PlusSign = require('../../icons/plus-sign.svg');
-const MinusSign = require('../../icons/minus-sign.svg');
+import PlusSign from '../../icons/PlusSign';
+import MinusSign from '../../icons/MinusSign';
 
 interface Props {
   block: ContentBlock;
