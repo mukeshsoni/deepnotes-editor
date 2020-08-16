@@ -1,0 +1,15 @@
+.link {
+  color: var(--text-copy-tertiary);
+  text-decoration: underline;
+  overflow-wrap: break-word;
+  white-space: normal;
+  cursor: pointer;
+}
+
+.link:visited {
+  color: var(--text-copy-tertiary);
+}
+
+.link:hover {
+  color: #97266d;
+}

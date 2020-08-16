@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import styles from './link_styles.module.css';
+
 interface Props {
   children: Array<React.ReactElement>;
 }
@@ -13,7 +15,7 @@ export default function Link(props: Props) {
     <a
       href={link}
       onClick={() => window.open(link, '_blank')}
-      className="text-copy-tertiary underline break-words whitespace-normal cursor-pointer visited:text-copy-tertiary hover:text-pink-800"
+      className={styles.link}
     >
       {props.children}
     </a>
