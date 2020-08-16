@@ -25,9 +25,7 @@ import 'deepnotes-editor/deepnotes-editor.css';
 
 // inside your dom heirarchy somewhere
 <div>
-  <Editor 
-  onChange={editorState => saveToDb(editorState)}
-  />
+  <Editor onChange={editorState => saveToDb(editorState)} />
 </div>
 ```
 
@@ -80,9 +78,9 @@ This prop can be used to initialize the editor with some saved state. The state
 is of the type `EditorState` from `draft-js`. See `draft-js` documentation for
 more details - https://draftjs.org/docs/quickstart-api-basics#controlling-rich-text
 
-P. S. - This component is not a controlled component. Which means that once
-loaded, changing the initialEditorState in between renders will not make it
-reset to whatever new state is being sent.
+P. S. - This component is not a controlled component. But if you change the
+variable you send to `initialEditorState`, it will set that as the new editor
+state. 
 
 #### initialZoomedInItemId
 If we want the editor to open zoomed in on some item. Very useful if you map the
