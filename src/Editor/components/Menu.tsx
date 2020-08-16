@@ -10,6 +10,7 @@ import Star from '../../icons/Star';
 
 import settingsStyles from '../../settings_styles.module.css';
 import styles from './menu_styles.module.css';
+import '@reach/menu-button/styles.css';
 
 interface Props {
   onExpandAllClick: () => void;

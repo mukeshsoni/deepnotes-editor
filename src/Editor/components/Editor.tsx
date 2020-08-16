@@ -60,8 +60,6 @@ import { sanitizePosAndDepthInfo } from '../sanitize_pos_and_depth_info';
 import PlusSign from '../../icons/PlusSign';
 
 import 'draft-js/dist/Draft.css';
-import '@reach/menu-button/styles.css';
-import '../../tailwind_generated.css';
 import './editor_styles.global.css';
 import styles from './editor_styles.module.css';
 
