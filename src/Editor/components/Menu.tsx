@@ -8,7 +8,6 @@ import ArrowLeft from '../../icons/ArrowLeft';
 import DotHorizontal from '../../icons/DotHorizontal';
 import Star from '../../icons/Star';
 
-import settingsStyles from '../../settings_styles.module.css';
 import styles from './menu_styles.module.css';
 import '@reach/menu-button/styles.css';
 
@@ -114,7 +113,7 @@ export default function MenuContainer({
                   <DotHorizontal className={styles['menu-icon']} />
                 </button>
               </MenuButton>
-              <MenuList className={settingsStyles['slide-down']}>
+              <MenuList className={styles['slide-down']}>
                 <MenuItem onSelect={onExpandAllClick}>Expand all</MenuItem>
                 <MenuItem onSelect={onCollapseAllClick}>Collapse all</MenuItem>
               </MenuList>

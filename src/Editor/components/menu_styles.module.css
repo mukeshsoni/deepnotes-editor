@@ -47,3 +47,64 @@
   stroke: currentColor;
 }
 
+[data-reach-dialog-overlay] {
+  z-index: 100;
+}
+
+[data-reach-dialog-content] {
+  position: relative;
+}
+
+[data-reach-dialog-content] > button.close-button {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  padding: 5px;
+  border: none;
+  font-size: 150%;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-reach-menu] {
+  z-index: 100;
+}
+
+.slide-down[data-reach-menu-list] {
+  border-radius: 5px;
+  animation: slide-down 0.2s ease;
+}
+
+[data-reach-menu-item][data-selected] {
+  background: #4a5568;
+}
+
+[data-reach-menu-button] {
+  border: none;
+}
+
+[data-reach-dialog-content] {
+  height: 80vh;
+}
+
+@media only screen and (max-width: 600px) {
+  [data-reach-dialog-content] {
+    width: 80vw;
+    height: 80vh;
+  }
+
+  [data-reach-menu-item] {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
