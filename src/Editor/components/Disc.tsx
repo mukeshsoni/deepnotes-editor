@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import { EditorContext } from './EditorDispatchContext';
 import DownArrow from '../../icons/DownArrow';
 
+import styles from './disc_styles.module.css';
+
 interface Props {
   collapsed: boolean;
   itemId: string;
@@ -26,10 +28,10 @@ export default function Disc({ collapsed, itemId, isCollapsible }: Props) {
   );
 
   return (
-    <div className="relative flex items-center" style={{ marginTop: 2 }}>
+    <div className={styles['disc-container']} style={{ marginTop: 2 }}>
       {isCollapsible && (
         <button
-          className="absolute top-0 left-0 items-center justify-center hidden w-8 h-6 -ml-8 border-none opacity-0 cursor-pointer sm:flex transition-all duration-100 hover:opacity-100"
+          className={styles['collapse-button']}
           style={{
             marginTop: -2,
           }}
@@ -47,12 +49,9 @@ export default function Disc({ collapsed, itemId, isCollapsible }: Props) {
           data-testid="collapse-arrow"
         >
           <DownArrow
-            className={classNames(
-              'transition-transform duration-100 transform rotate-0 fill-current text-copy-primary',
-              {
-                '-rotate-90': collapsed,
-              }
-            )}
+            className={classNames(styles['down-arrow-icon'], {
+              [styles['collapsed-down-arrow-icon']]: collapsed,
+            })}
             width={8}
             height={8}
           />
@@ -60,10 +59,9 @@ export default function Disc({ collapsed, itemId, isCollapsible }: Props) {
       )}
       <div
         contentEditable={false}
-        className={classNames(
-          'flex items-center justify-center w-5 h-5 rounded-full cursor-pointer hover:bg-background-tertiary',
-          { 'bg-background-secondary': collapsed }
-        )}
+        className={classNames(styles['disc'], {
+          [styles['disc-collapsed']]: collapsed,
+        })}
         onClick={() => {
           if (typeof onZoom === 'function') {
             onZoom(itemId);
@@ -74,7 +72,7 @@ export default function Disc({ collapsed, itemId, isCollapsible }: Props) {
         <svg
           width="6"
           height="6"
-          className="fill-current text-copy-secondary"
+          className={styles['disc-icon']}
           viewBox="0 0 6 6"
         >
           <circle cx="3" cy="3" r="3" />

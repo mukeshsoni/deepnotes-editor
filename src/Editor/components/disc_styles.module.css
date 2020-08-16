@@ -1,0 +1,68 @@
+.disc-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.collapse-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 1.5rem;
+  margin-left: -2rem;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.collapse-button:hover {
+  opacity: 1;
+}
+
+.down-arrow-icon {
+  transition-property: transform;
+  transition-duration: 100ms;
+  --transform-translate-x: 0;
+  --transform-translate-y: 0;
+  --transform-rotate: 0;
+  --transform-skew-x: 0;
+  --transform-skew-y: 0;
+  --transform-scale-x: 1;
+  --transform-scale-y: 1;
+  -webkit-transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+          transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+  fill: currentColor;
+  color: var(--text-copy-primary);
+}
+
+.collapsed-down-arrow-icon {
+  --transform-rotate: -90deg;
+}
+
+.disc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.disc:hover {
+  background-color: var(--bg-background-tertiary);
+}
+
+.disc.disc-collapsed {
+  background-color: var(--bg-background-secondary);
+}
+
+.disc.disc-collapsed:hover {
+  background-color: var(--bg-background-tertiary);
+}
+
+.disc-icon {
+  fill: currentColor;
+  color: var(--text-copy-secondary);
+}

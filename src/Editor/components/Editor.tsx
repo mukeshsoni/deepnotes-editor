@@ -788,7 +788,7 @@ function DeepnotesEditor(props: Props) {
 
   // className="flex flex-col w-full p-10 pt-3 pl-6 mb-12 sm:pl-10 sm:shadow-sm rounded-md"
   return (
-    <div className="editor">
+    <div className="editor theme-light">
       <Menu
         onExpandAllClick={handleExpandAllClick}
         onCollapseAllClick={handleCollapseAllClick}
