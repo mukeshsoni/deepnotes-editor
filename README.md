@@ -5,7 +5,7 @@ component.
 
 Here's a gif of how it works - 
 
-[deepnotes editor demo](deepnotes-editor-demo.gif)
+![deepnotes editor demo](deepnotes-editor-demo.gif)
 
 Usage -
 
@@ -25,7 +25,50 @@ import 'deepnotes-editor/deepnotes-editor.css';
 
 // inside your dom heirarchy somewhere
 <div>
-  <Editor />
+  <Editor 
+  onChange={editorState => saveToDb(editorState)}
+  />
+</div>
+```
+
+## How to save editor state?
+You can use draft-js utilities to convert the `EditorState` returned from
+`onChange` prop. The prop returned is an [immutable-js](https://immutable-js.github.io/immutable-js/) value.
+
+
+```
+import { convertToRaw } from 'draft-js'
+
+function saveToDb(editorState) {
+  const contentState = JSON.stringify(convertToRaw(contentState)),
+
+  saveToDbOrLocalStorage(contentState);
+}
+```
+
+## How to get back editor state from the saved content state?
+You can use `convertFromRaw` utility from `draft-js` to convert the content
+state json back to immutable-js `EditorState`. You have to use the
+`createDecorators` function which comes with `deepnotes-editor` so that the
+hashtags, links and code are highlighted properly.
+
+
+```
+import DeepnotesEditor, { createDecorators} from 'deepnotes-editor';
+import 'deepnotes-editor/deepnotes-editor.css';
+
+const contentState = convertFromRaw(JSON.parse(backupContent));
+const editorState = EditorState.createWithContent(
+  contentState,
+  createDecorators()
+);
+
+// inside your render function
+return <div>
+  <DeepnotesEditor
+    initialEditorState={editorState}
+    onChange={(changedEditorState) => saveToDb(changedEditorState)}}
+  />
 </div>
 ```
 
