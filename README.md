@@ -105,14 +105,7 @@ build a bookmarking feature where the user can zoom to any of the bookmarked
 item.
 
 ## Development
-This project was built using
-[https://github.com/formium/tsdx](https://github.com/formium/tsdx). Given below
-are some instructions on how you get build the project and get the example
-running.
-
-## Commands
-
-The recommended workflow is to run TSDX in one terminal:
+Install dependencies and start the build for the Editor component
 
 ```bash
 npm install # or yarn install
