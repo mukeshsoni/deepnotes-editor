@@ -64,7 +64,7 @@ export const getBlock = (editorState: EditorState, blockNumber: number) => {
 
 export const getParentId = (editorState: EditorState, blockNumber: number) => {
   const blocks = getBlocks(editorState);
-  return blocks[blockNumber].get('data').get('parntId');
+  return blocks[blockNumber].get('data').get('parentId');
 };
 
 export const getPosNumber = (editorState: EditorState, blockNumber: number) => {
