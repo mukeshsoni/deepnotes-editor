@@ -9,6 +9,7 @@ import DotHorizontal from '../../icons/DotHorizontal';
 import Star from '../../icons/Star';
 
 import settingsStyles from '../../settings_styles.module.css';
+import styles from './menu_styles.module.css';
 
 interface Props {
   onExpandAllClick: () => void;
@@ -30,8 +31,8 @@ export default function MenuContainer({
   onBookmarkClick,
 }: Props) {
   return (
-    <div className="sticky top-0 z-10 flex items-center justify-end w-full px-4 py-2 mt-3 bg-background-primary transition-colors duration-300">
-      <div className="flex items-center px-2 mr-6 text-gray-600 space-x-2">
+    <div className={styles['menu-container']}>
+      <div className={styles['menu-left-container']}>
         <button
           onMouseDown={e => {
             // tip: mousedown event occurs before onFocus and onClick. If we
@@ -48,7 +49,7 @@ export default function MenuContainer({
           className="icon-button"
           title="Mark complete"
         >
-          <CheckMark className="w-4 h-4" />
+          <CheckMark className={styles['menu-icon']} />
         </button>
         {'\u00A0'}
         <button
@@ -67,7 +68,7 @@ export default function MenuContainer({
           className="icon-button"
           title="Outdent"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className={styles['menu-icon']} />
         </button>
         <button
           onMouseDown={e => {
@@ -80,12 +81,13 @@ export default function MenuContainer({
           className="icon-button"
           title="Indent"
         >
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className={styles['menu-icon']} />
         </button>
       </div>
-      <div className="flex items-center">
+      <div className={styles['menu-right-container']}>
         <button
-          className="mr-1 icon-button"
+          className="icon-button"
+          style={{ marginRight: '1rem' }}
           onMouseDown={e => {
             e.stopPropagation();
             e.preventDefault();
@@ -97,9 +99,9 @@ export default function MenuContainer({
           data-bookmarked={isBookmarked}
         >
           <Star
-            className={classNames('w-5 h-5', {
-              'fill-current text-pink-600': isBookmarked,
-              'stroke-current': !isBookmarked,
+            className={classNames(styles['menu-icon-large'], {
+              [styles.bookmarked]: isBookmarked,
+              [styles['not-bookmarked']]: !isBookmarked,
             })}
           />
         </button>
@@ -108,7 +110,7 @@ export default function MenuContainer({
             <>
               <MenuButton>
                 <button className="icon-button" aria-label="Show menu">
-                  <DotHorizontal className="w-4 h-4 fill-current" />
+                  <DotHorizontal className={styles['menu-icon']} />
                 </button>
               </MenuButton>
               <MenuList className={settingsStyles['slide-down']}>

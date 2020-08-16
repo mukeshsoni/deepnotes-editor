@@ -1,0 +1,49 @@
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  background-color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menu-left-container {
+  --space-x-reverse: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  margin-right: 1.5rem;
+  color: #718096;
+  margin-right: calc(0.5rem * var(--space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--space-x-reverse)));
+}
+
+.menu-right-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.menu-icon-large {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.bookmarked {
+  fill: currentColor;
+  color: #d53f8c;
+}
+
+.not-bookmarked {
+  stroke: currentColor;
+}
+

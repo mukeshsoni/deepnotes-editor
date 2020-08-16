@@ -2,6 +2,73 @@
   width: 100%;
 }
 
+.theme-light {
+  --bg-background-primary: white;
+  --bg-background-secondary: #edf2f7;
+  --bg-background-tertiary: #a0aec0;
+  --bg-background-form: white;
+  --text-copy-primary: #1a202c;
+  --text-copy-secondary: #2d3748;
+  --text-copy-tertiary: #718096;
+  --border-border-color-primary: white;
+}
+
+.theme-light .search-highlighted {
+  background: #f0fff4;
+}
+
+.theme-light .search-hover:hover {
+  background: #f0fff4;
+}
+
+.theme-dark .markdown-body {
+  color: #24292e;
+}
+
+.theme-dark .search-highlighted {
+  background: #2d3748;
+}
+
+.theme-dark .search-hover:hover {
+  background: #2d3748;
+}
+
+.theme-dark {
+  --bg-background-primary: #232931;
+  --bg-background-secondary: #393e46;
+  --bg-background-tertiary: #4ecca3;
+  --bg-background-form: #1a202c;
+  --text-copy-primary: #f7fafc;
+  --text-copy-secondary: #cbd5e0;
+  --text-copy-tertiary: #a0aec0;
+  --border-border-color-primary: #1a202c;
+}
+
+.theme-dark .markdown-body {
+  color: #cbd5e0;
+}
+
+.theme-dark nav .active {
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, var(--border-opacity));
+}
+
+#app-root {
+  transition: background-color 0.3s;
+}
+
+.icon-button {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  color: var(--text-copy-primary);
+}
+
+.icon-button:hover {
+  background-color: var(--bg-background-secondary);
+}
+
 @media only screen and (max-width: 600px) {
   .editor-wrapper {
     padding: 30px;
