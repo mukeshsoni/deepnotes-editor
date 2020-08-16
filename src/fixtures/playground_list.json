@@ -1,0 +1,458 @@
+{
+  "update_time": 1587827653.142,
+  "content": {
+    "blocks": [
+      {
+        "key": "root",
+        "text": "",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": {}
+      },
+      {
+        "key": "6ahrj",
+        "text": "<--- Your whole life can fit in this bullet (click the bullet to learn more)",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "root", "pos": 100000 }
+      },
+      {
+        "key": "30jo7",
+        "text": "WorkFlowy offers a unique way to organize information: a fractal document",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "6ahrj", "pos": 100000 }
+      },
+      {
+        "key": "70bkm",
+        "text": "Every bullet is a document.",
+        "type": "nordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "6ahrj", "pos": 200000 }
+      },
+      {
+        "key": "5tba0",
+        "text": "Every document can contain infinite documents.",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "6ahrj", "pos": 300000 }
+      },
+      {
+        "key": "ujhc",
+        "text": "It's simple, but extremely powerful. (click the bullet)",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "6ahrj", "pos": 400000 }
+      },
+      {
+        "key": "a8mor",
+        "text": "It lets you easily organize hundreds of thousands of notes, ideas and projects.",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "ujhc", "pos": 100000 }
+      },
+      {
+        "key": "2on3h",
+        "text": "While choosing to focus on one small part at a time",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "ujhc", "pos": 200000 }
+      },
+      {
+        "key": "72a4n",
+        "text": "Here's some more stuff about WorkFlowy that you might want to explore",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "ujhc", "pos": 300000 }
+      },
+      {
+        "key": "5sel6",
+        "text": "Things to try",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "72a4n", "pos": 100000 }
+      },
+      {
+        "key": "90ctv",
+        "text": "Click any bullet to zoom",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 100000 }
+      },
+      {
+        "key": "bort8",
+        "text": "Click the arrow left of a bullet to expand or collapse",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 200000 }
+      },
+      {
+        "key": "cicqt",
+        "text": "Click anywhere to type, and hit <enter>, <tab> and <shift+tab>",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 300000 }
+      },
+      {
+        "key": "426o2",
+        "text": "Click the #important tag",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 400000 }
+      },
+      {
+        "key": "7m5c3",
+        "text": "Drag a bullet somewhere else",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 500000 }
+      },
+      {
+        "key": "6qjcs",
+        "text": "Click some bullets to zoom around",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 600000 }
+      },
+      {
+        "key": "2m8p0",
+        "text": "Install the mobile and desktop apps #important",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 700000 }
+      },
+      {
+        "key": "9b19l",
+        "text": "Share a sub-list with someone",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 800000 }
+      },
+      {
+        "key": "fgt0o",
+        "text": "#important You can share any bullet with different people, no matter where it is. This is the most flexible sharing model in any tool. #fractal",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "9b19l", "pos": 100000 }
+      },
+      {
+        "key": "bmigr",
+        "text": "Hover over a bullet explore the menu that pops up",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 900000 }
+      },
+      {
+        "key": "a1pmn",
+        "text": "Search for something",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 1000000 }
+      },
+      {
+        "key": "bbk6b",
+        "text": "Learn the keyboard shortcuts (they make everything super fast)",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5sel6", "pos": 1100000 }
+      },
+      {
+        "key": "dvmlr",
+        "text": "Things real people have done with WorkFlowy",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "72a4n", "pos": 200000 }
+      },
+      {
+        "key": "egiib",
+        "text": "Built a billion dollar business",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "dvmlr", "pos": 100000 }
+      },
+      {
+        "key": "f4hgp",
+        "text": "Write bestselling books",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "dvmlr", "pos": 200000 }
+      },
+      {
+        "key": "e3u4d",
+        "text": "Get laws passed",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "dvmlr", "pos": 300000 }
+      },
+      {
+        "key": "3l6qa",
+        "text": "Manage large construction projects",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "dvmlr", "pos": 400000 }
+      },
+      {
+        "key": "epdu0",
+        "text": "Manage a public company",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "dvmlr", "pos": 500000 }
+      },
+      {
+        "key": "92qh0",
+        "text": "Write screenplays",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "dvmlr", "pos": 600000 }
+      },
+      {
+        "key": "eegbr",
+        "text": "Research and write stories for prestigious newspapers",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "dvmlr", "pos": 700000 }
+      },
+      {
+        "key": "38h0e",
+        "text": "Research and write a Phd thesis",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "dvmlr", "pos": 800000 }
+      },
+      {
+        "key": "6rd0p",
+        "text": "Create award winning art",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "dvmlr", "pos": 900000 }
+      },
+      {
+        "key": "b5gul",
+        "text": "How is it different from Google Docs, Word, etc?",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "72a4n", "pos": 300000 }
+      },
+      {
+        "key": "5er5t",
+        "text": "The truth is, if you use WorkFlowy for a week you'll realize that it is profoundly different.",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "b5gul", "pos": 100000 }
+      },
+      {
+        "key": "ccals",
+        "text": "In your WorkFlowy document, you can build a system to store all the information in your life. A system tailored to your unique way of thinking, your unique way of working, which you can navigate at the speed of thought.",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "b5gul", "pos": 200000 }
+      },
+      {
+        "key": "34dun",
+        "text": "You simply can't do that in Word or Google Docs. In Google Docs or Word, you always have to break out new documents when something gets to big. You can't go infinitely deep when things get complicated. You have to think linearly.",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "b5gul", "pos": 300000 }
+      },
+      {
+        "key": "1o6qj",
+        "text": "In other tools, you have to constantly create new documents. Not in WorkFlowy. For example, all your meetings can go under a \"Meetings\" bullet, and all your meetings with Alex can go under \"Meetings > Alex\". It's like your document is also your file system.",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "b5gul", "pos": 400000 }
+      },
+      {
+        "key": "p884",
+        "text": "This way of thinking and working takes a little bit of getting used to, but is extremely powerful. Try it for a week, and you'll wonder how you survived without it.",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "b5gul", "pos": 500000 }
+      },
+      {
+        "key": "5njoo",
+        "text": "Pricing (It's free for most people)",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "72a4n", "pos": 400000 }
+      },
+      {
+        "key": "6n5oo",
+        "text": "Basic WorkFlowy is free",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5njoo", "pos": 100000 }
+      },
+      {
+        "key": "cs635",
+        "text": "Create 250 Bullets a month",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "6n5oo", "pos": 100000 }
+      },
+      {
+        "key": "7jmpd",
+        "text": "Access to all the basic features",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "6n5oo", "pos": 200000 }
+      },
+      {
+        "key": "3q0h7",
+        "text": "WorkFlowy Pro is $5 a month",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "5njoo", "pos": 200000 }
+      },
+      {
+        "key": "btob9",
+        "text": "Unlimited bullets",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "3q0h7", "pos": 100000 }
+      },
+      {
+        "key": "b12ko",
+        "text": "Daily Dropbox Backups",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "3q0h7", "pos": 200000 }
+      },
+      {
+        "key": "96egh",
+        "text": "Priority Support",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "3q0h7", "pos": 300000 }
+      },
+      {
+        "key": "khm2",
+        "text": "What to do next",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "72a4n", "pos": 500000 }
+      },
+      {
+        "key": "4bjaf",
+        "text": "Sign up for WorkFlowy!!!",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "khm2", "pos": 100000 }
+      },
+      {
+        "key": "23l06",
+        "text": "Try using it for a week",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "khm2", "pos": 200000 }
+      },
+      {
+        "key": "dpouv",
+        "text": "Email help@workflowy.com if you have any questions",
+        "type": "unordered-list-item",
+        "depth": 0,
+        "inlineStyleRanges": [],
+        "entityRanges": [],
+        "data": { "completed": false, "parentId": "khm2", "pos": 300000 }
+      }
+    ],
+    "entityMap": {}
+  }
+}

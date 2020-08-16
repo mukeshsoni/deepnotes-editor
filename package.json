@@ -14,6 +14,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
+    "test:watch": "tsdx test --watch",
     "lint": "tsdx lint",
     "prepare": "tsdx build"
   },
@@ -44,6 +45,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup-plugin-postcss": "^3.1.5",
+    "ts-jest": "^26.2.0",
     "tsdx": "^0.13.2",
     "tslib": "^2.0.1",
     "typescript": "^3.9.7"

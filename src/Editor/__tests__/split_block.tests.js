@@ -212,7 +212,6 @@ describe('splitBlock function', () => {
       assertBlockCount(editorState, 50);
       const blockToSplitIndex = 5;
       const blockToSplit = getBlock(editorState, blockToSplitIndex);
-      console.log('block', blockToSplit.getText());
       assertBlockDepth(editorState, blockToSplitIndex, 2);
       editorState = moveFocus(editorState, blockToSplitIndex, 0);
       editorState = splitBlock(editorState);
