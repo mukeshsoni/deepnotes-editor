@@ -135,33 +135,3 @@ To do a one-off build, use `npm run build` or `yarn build`.
 
 To run tests, use `npm test` or `yarn test`.
 
-## Configuration
-
-Code quality is [set up for you](https://github.com/palmerhq/tsdx/pull/45/files) with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
-
-### Jest
-
-Jest tests are set up to run with `npm test` or `yarn test`. This runs the test watcher (Jest) in an interactive mode. By default, runs tests related to files changed since the last commit.
-
-## Deploying the Playground
-
-The Playground is just a simple [Parcel](https://parceljs.org) app, you can deploy it anywhere you would normally deploy that. Here are some guidelines for **manually** deploying with the Netlify CLI (`npm i -g netlify-cli`):
-
-```bash
-cd example # if not already in the example folder
-npm run build # builds to dist
-netlify deploy # deploy the dist folder
-```
-
-Alternatively, if you already have a git repo connected, you can set up continuous deployment with Netlify:
-
-```bash
-netlify init
-# build command: yarn build && cd example && yarn && yarn build
-# directory to deploy: example/dist
-# pick yes for netlify.toml
-```
-
-## Publishing to NPM
-
-We recommend using [np](https://github.com/sindresorhus/np).
