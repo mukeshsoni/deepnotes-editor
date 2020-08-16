@@ -62,7 +62,8 @@ import PlusSign from '../../icons/PlusSign';
 import 'draft-js/dist/Draft.css';
 import '@reach/menu-button/styles.css';
 import '../../tailwind_generated.css';
-import './editor_styles.css';
+import './editor_styles.global.css';
+import styles from './editor_styles.module.css';
 
 declare global {
   interface Window {
@@ -785,6 +786,7 @@ function DeepnotesEditor(props: Props) {
     }
   }, [dispatch, onBookmarkClick]);
 
+  // className="flex flex-col w-full p-10 pt-3 pl-6 mb-12 sm:pl-10 sm:shadow-sm rounded-md"
   return (
     <div className="editor">
       <Menu
@@ -804,7 +806,7 @@ function DeepnotesEditor(props: Props) {
         onBookmarkClick={handleBookmarkClick}
       />
       <div
-        className="flex flex-col w-full p-10 pt-3 pl-6 mb-12 sm:pl-10 sm:shadow-sm rounded-md"
+        className={styles.container}
         tabIndex={0}
         onFocus={handleWrapperFocus}
         style={{ minHeight: 300, ...editorWrapperStyle }}
@@ -843,13 +845,13 @@ function DeepnotesEditor(props: Props) {
           <ListNestingStyles max={40} />
         </EditorContext.Provider>
         <button
-          className="flex self-start justify-center flex-shrink-0 p-2 -ml-3 rounded-full hover:bg-gray-300"
+          className={styles['new-item-button']}
           onClick={handleAddNewItem}
           aria-label="Add new item"
           title="Add new item"
         >
           <PlusSign
-            className="w-3 h-3 fill-current"
+            className={styles['new-item-icon']}
             aria-label="Add new item"
           />
         </button>
