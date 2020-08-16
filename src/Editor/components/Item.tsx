@@ -5,6 +5,8 @@ import Disc from './Disc';
 import PlusSign from '../../icons/PlusSign';
 import MinusSign from '../../icons/MinusSign';
 
+import styles from './item_styles.module.css';
+
 interface Props {
   block: ContentBlock;
   blockProps: {
@@ -105,15 +107,12 @@ export const Item = React.memo((props: Props) => {
 
   const depth = block.getDepth();
   // most of the conditional classes are for the zoomed in item. It's special.
-  const itemClasses = classNames('flex items-start relative', {
-    'text-gray-500 line-through': completed,
-    'p-1': zoomedInItemId !== block.getKey(),
-    'pl-1': zoomedInItemId === block.getKey(),
-    'mb-2': zoomedInItemId === block.getKey(),
-    'font-bold': zoomedInItemId === block.getKey(),
-    'text-2xl': zoomedInItemId === block.getKey(),
-    'text-sm': zoomedInItemId !== block.getKey() && depth > baseDepth + 1,
-    'text-base': zoomedInItemId !== block.getKey() && depth === baseDepth + 1,
+  const itemClasses = classNames(styles['item-base'], {
+    [styles.completed]: completed,
+    [styles['regular-item']]: zoomedInItemId !== block.getKey(),
+    [styles['zoomed-in-item']]: zoomedInItemId === block.getKey(),
+    [styles['small-text']]:
+      zoomedInItemId !== block.getKey() && depth > baseDepth + 1,
   });
 
   return wrapInNestedDivs(
@@ -135,13 +134,13 @@ export const Item = React.memo((props: Props) => {
           isCollapsible={collapsible}
         />
       )}
-      <div className="flex items-center justify-between w-full ml-3">
+      <div className={styles['item-container']}>
         <EditorBlock {...props} />
         {collapsible ? (
           !collapsed ? (
             <button
               contentEditable={false}
-              className="flex items-center justify-center ml-3 sm:hidden"
+              className={styles['mobile-collapse-button']}
               onMouseDown={e => {
                 e.stopPropagation();
                 e.nativeEvent.stopImmediatePropagation();
@@ -154,7 +153,7 @@ export const Item = React.memo((props: Props) => {
           ) : (
             <button
               contentEditable={false}
-              className="flex items-center justify-center ml-3 sm:hidden"
+              className={styles['mobile-collapse-button']}
               onMouseDown={e => {
                 e.stopPropagation();
                 e.nativeEvent.stopImmediatePropagation();
@@ -169,8 +168,7 @@ export const Item = React.memo((props: Props) => {
       </div>
     </div>,
     {
-      className:
-        'depth-manager pl-8 border-l border-background-secondary border-opacity-50 w-full',
+      className: classNames('depth-manager', styles['depth-manager']),
     },
     depth - baseDepth - 1
   );
