@@ -9,6 +9,7 @@ import DotHorizontal from '../../icons/DotHorizontal';
 import Star from '../../icons/Star';
 
 import styles from './menu_styles.module.css';
+import buttonStyles from '../../button_styles.module.css';
 import '@reach/menu-button/styles.css';
 
 interface Props {
@@ -46,7 +47,10 @@ export default function MenuContainer({
             onToggleCompletionClick();
           }}
           aria-label="Mark complete"
-          className="icon-button"
+          className={classNames(
+            buttonStyles['icon-button'],
+            buttonStyles['button']
+          )}
           title="Mark complete"
         >
           <CheckMark className={styles['menu-icon']} />
@@ -65,7 +69,10 @@ export default function MenuContainer({
             onOutdentClick();
           }}
           aria-label="Outdent"
-          className="icon-button"
+          className={classNames(
+            buttonStyles['icon-button'],
+            buttonStyles['button']
+          )}
           title="Outdent"
         >
           <ArrowLeft className={styles['menu-icon']} />
@@ -78,7 +85,10 @@ export default function MenuContainer({
             onIndentClick();
           }}
           aria-label="Indent"
-          className="icon-button"
+          className={classNames(
+            buttonStyles['icon-button'],
+            buttonStyles['button']
+          )}
           title="Indent"
         >
           <ArrowRight className={styles['menu-icon']} />
@@ -86,7 +96,10 @@ export default function MenuContainer({
       </div>
       <div className={styles['menu-right-container']}>
         <button
-          className="icon-button"
+          className={classNames(
+            buttonStyles['icon-button'],
+            buttonStyles['button']
+          )}
           style={{ marginRight: '1rem' }}
           onMouseDown={e => {
             e.stopPropagation();
@@ -109,7 +122,13 @@ export default function MenuContainer({
           {() => (
             <>
               <MenuButton>
-                <button className="icon-button" aria-label="Show menu">
+                <button
+                  className={classNames(
+                    buttonStyles['icon-button'],
+                    buttonStyles['button']
+                  )}
+                  aria-label="Show menu"
+                >
                   <DotHorizontal className={styles['menu-icon']} />
                 </button>
               </MenuButton>

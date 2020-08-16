@@ -11,7 +11,7 @@ import './deepnotes-editor.css';
 
 const App = () => {
   return (
-    <div className="theme-light" style={{ maxWidth: 800, margin: 'auto' }}>
+    <div style={{ maxWidth: 800, margin: 'auto' }}>
       <Editor initialZoomedInItemId="root" />
     </div>
   );

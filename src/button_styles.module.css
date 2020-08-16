@@ -1,0 +1,14 @@
+.button {
+  border: none;
+  background: transparent;
+}
+
+.button:hover {
+  background-color: #e2e8f0;
+}
+
+.icon-button {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  color: var(--text-copy-primary);
+}

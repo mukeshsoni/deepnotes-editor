@@ -1,8 +1,4 @@
-.DraftEditor-root {
-  width: 100%;
-}
-
-.theme-light {
+.deepnotes-editor-theme-light {
   --bg-background-primary: white;
   --bg-background-secondary: #edf2f7;
   --bg-background-tertiary: #a0aec0;
@@ -13,27 +9,27 @@
   --border-border-color-primary: white;
 }
 
-.theme-light .search-highlighted {
+.deepnotes-editor-theme-light .search-highlighted {
   background: #f0fff4;
 }
 
-.theme-light .search-hover:hover {
+.deepnotes-editor-theme-light .search-hover:hover {
   background: #f0fff4;
 }
 
-.theme-dark .markdown-body {
+.deepnotes-editor-theme-dark .markdown-body {
   color: #24292e;
 }
 
-.theme-dark .search-highlighted {
+.deepnotes-editor-theme-dark .search-highlighted {
   background: #2d3748;
 }
 
-.theme-dark .search-hover:hover {
+.deepnotes-editor-theme-dark .search-hover:hover {
   background: #2d3748;
 }
 
-.theme-dark {
+.deepnotes-editor-theme-dark {
   --bg-background-primary: #232931;
   --bg-background-secondary: #393e46;
   --bg-background-tertiary: #4ecca3;
@@ -44,36 +40,13 @@
   --border-border-color-primary: #1a202c;
 }
 
-.theme-dark .markdown-body {
+.deepnotes-editor-theme-dark .markdown-body {
   color: #cbd5e0;
 }
 
-.theme-dark nav .active {
+.deepnotes-editor-theme-dark nav .active {
   border-bottom-width: 1px;
   --border-opacity: 1;
   border-color: #fff;
   border-color: rgba(255, 255, 255, var(--border-opacity));
-}
-
-#app-root {
-  transition: background-color 0.3s;
-}
-
-.icon-button {
-  padding: 0.5rem;
-  border-radius: 9999px;
-  color: var(--text-copy-primary);
-}
-
-.icon-button:hover {
-  background-color: var(--bg-background-secondary);
-}
-
-@media only screen and (max-width: 600px) {
-  .editor-wrapper {
-    padding: 30px;
-    padding-top: 20px;
-    border: none;
-    box-shadow: unset;
-  }
 }

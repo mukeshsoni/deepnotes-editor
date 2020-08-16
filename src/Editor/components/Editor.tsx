@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import {
   BlockMap,
   DraftHandleValue,
@@ -61,6 +62,7 @@ import PlusSign from '../../icons/PlusSign';
 
 import 'draft-js/dist/Draft.css';
 import './editor_styles.global.css';
+import buttonStyles from '../../button_styles.module.css';
 import styles from './editor_styles.module.css';
 
 declare global {
@@ -786,7 +788,7 @@ function DeepnotesEditor(props: Props) {
 
   // className="flex flex-col w-full p-10 pt-3 pl-6 mb-12 sm:pl-10 sm:shadow-sm rounded-md"
   return (
-    <div className="editor theme-light">
+    <div className="editor deepnotes-editor-theme-light">
       <Menu
         onExpandAllClick={handleExpandAllClick}
         onCollapseAllClick={handleCollapseAllClick}
@@ -843,7 +845,11 @@ function DeepnotesEditor(props: Props) {
           <ListNestingStyles max={40} />
         </EditorContext.Provider>
         <button
-          className={styles['new-item-button']}
+          className={classNames(
+            buttonStyles['button'],
+            buttonStyles['icon-button'],
+            styles['new-item-button']
+          )}
           onClick={handleAddNewItem}
           aria-label="Add new item"
           title="Add new item"
