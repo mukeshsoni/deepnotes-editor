@@ -7,6 +7,17 @@ Here's a gif of how it works -
 
 ![deepnotes editor demo](deepnotes-editor-demo.gif)
 
+Why `deepnotes-editor`?
+
+- Supports infinitely nested lists
+- Every list item can be zoomed into. Therefore every list item can be thought
+  of as a document in itself
+- Nested lists can be collapsed to reduce clutter
+- Powerful keyboard shortcuts so that you don't have to remove your hands from
+  the keyboard when navigating the documents
+- Supports hashtags, automatic link detection and inline code block formatting
+- Bookmarking of any list item
+
 Usage -
 
 Install `deepnoter-editor`
@@ -21,7 +32,7 @@ Use anywhere in your react codebase
 import Editor from 'deepnotes-editor';
 
 // it will look like it's not working without the css
-import 'deepnotes-editor/deepnotes-editor.css';
+import 'deepnotes-editor/dist/deepnotes-editor.css';
 
 // inside your dom heirarchy somewhere
 <div>
@@ -53,7 +64,7 @@ hashtags, links and code are highlighted properly.
 
 ```
 import DeepnotesEditor, { createDecorators} from 'deepnotes-editor';
-import 'deepnotes-editor/deepnotes-editor.css';
+import 'deepnotes-editor/dist/deepnotes-editor.css';
 
 const contentState = convertFromRaw(JSON.parse(backupContent));
 const editorState = EditorState.createWithContent(
@@ -78,9 +89,11 @@ This prop can be used to initialize the editor with some saved state. The state
 is of the type `EditorState` from `draft-js`. See `draft-js` documentation for
 more details - https://draftjs.org/docs/quickstart-api-basics#controlling-rich-text
 
-P. S. - This component is not a controlled component. But if you change the
-variable you send to `initialEditorState`, it will set that as the new editor
-state. 
+P. S. - This component is not a controlled component. The state of the editor is
+maintained inside the component. If you change the zoomedInItemId, the editor
+will zoom into that item. But changing the initialEditorState between renders
+will not change the content of the editor to the new value of
+initialEditorState.
 
 #### initialZoomedInItemId
 If we want the editor to open zoomed in on some item. Very useful if you map the
@@ -103,6 +116,10 @@ workflowy.com to understand what zoom in means.
 If a user wants to bookmarks a particular zoomed in item. This can be used to
 build a bookmarking feature where the user can zoom to any of the bookmarked
 item.
+
+### withToolbar
+If you don't want the menu/toolbar which shows up above the editor, you can set
+withToolbar to false.
 
 ## Development
 Install dependencies and start the build for the Editor component

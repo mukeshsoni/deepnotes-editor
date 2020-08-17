@@ -132,6 +132,7 @@ interface Props {
   onRootChange?: (zoomedInItemId: string) => void;
   editorWrapperStyle?: React.CSSProperties;
   onBookmarkClick?: () => void;
+  withToolbar?: boolean;
 }
 
 // TODO: let's try to also retain the selection state here
@@ -223,6 +224,7 @@ let editorDispatchContextValue = {};
 function DeepnotesEditor(props: Props) {
   // const [showBoardView, setShowBoardView] = React.useState(false);
   const searchInputRef = React.useRef<HTMLInputElement>(null);
+  const editor = React.useRef<any>(null);
   // using useReducer instead of multiple useState calls because this
   // is the top component and will probably have the global state with it.
   // useReducer will allow us to have logic to modify various parts of global
@@ -245,6 +247,7 @@ function DeepnotesEditor(props: Props) {
     onRootChange,
     editorWrapperStyle,
     onBookmarkClick,
+    withToolbar = true,
   } = props;
   const { editorState, zoomedInItemId } = state;
 
@@ -289,16 +292,16 @@ function DeepnotesEditor(props: Props) {
   );
 
   // load initial editorState from the owner props
-  React.useEffect(() => {
-    if (initialEditorState) {
-      const sanitizedInitialEditorState = sanitizePosAndDepthInfo(
-        initialEditorState,
-        ROOT_KEY
-      );
-      setRootEditorState(sanitizedInitialEditorState);
-      setEditorState(sanitizedInitialEditorState);
-    }
-  }, [initialEditorState, setEditorState]);
+  // React.useEffect(() => {
+  // if (initialEditorState) {
+  // const sanitizedInitialEditorState = sanitizePosAndDepthInfo(
+  // initialEditorState,
+  // ROOT_KEY
+  // );
+  // setRootEditorState(sanitizedInitialEditorState);
+  // setEditorState(sanitizedInitialEditorState);
+  // }
+  // }, [initialEditorState, setEditorState]);
 
   // load initial editorState from the owner props
   React.useEffect(() => {
@@ -373,8 +376,6 @@ function DeepnotesEditor(props: Props) {
     return undefined;
   }
 
-  const editor = React.useRef<any>(null);
-
   function focusEditor() {
     // We don't want to refocus if it's already in focus
     if (
@@ -423,6 +424,15 @@ function DeepnotesEditor(props: Props) {
         e.stopPropagation();
       }
     });
+
+    if (initialEditorState) {
+      const sanitizedInitialEditorState = sanitizePosAndDepthInfo(
+        initialEditorState,
+        ROOT_KEY
+      );
+      setRootEditorState(sanitizedInitialEditorState);
+      setEditorState(sanitizedInitialEditorState);
+    }
 
     // cleanup
     return () => {
@@ -789,22 +799,24 @@ function DeepnotesEditor(props: Props) {
   // className="flex flex-col w-full p-10 pt-3 pl-6 mb-12 sm:pl-10 sm:shadow-sm rounded-md"
   return (
     <div className="editor deepnotes-editor-theme-light">
-      <Menu
-        onExpandAllClick={handleExpandAllClick}
-        onCollapseAllClick={handleCollapseAllClick}
-        onIndentClick={handleIndentClick}
-        onOutdentClick={handleOutdentClick}
-        onToggleCompletionClick={toggleCompletion}
-        isBookmarked={
-          editorState &&
-          !!editorState
-            .getCurrentContent()
-            .getBlockMap()
-            .get(zoomedInItemId)
-            .getIn(['data', 'bookmarked'])
-        }
-        onBookmarkClick={handleBookmarkClick}
-      />
+      {withToolbar && (
+        <Menu
+          onExpandAllClick={handleExpandAllClick}
+          onCollapseAllClick={handleCollapseAllClick}
+          onIndentClick={handleIndentClick}
+          onOutdentClick={handleOutdentClick}
+          onToggleCompletionClick={toggleCompletion}
+          isBookmarked={
+            editorState &&
+            !!editorState
+              .getCurrentContent()
+              .getBlockMap()
+              .get(zoomedInItemId)
+              .getIn(['data', 'bookmarked'])
+          }
+          onBookmarkClick={handleBookmarkClick}
+        />
+      )}
       <div
         className={styles.container}
         tabIndex={0}
