@@ -18,6 +18,10 @@ Why `deepnotes-editor`?
 - Supports hashtags, automatic link detection and inline code block formatting
 - Bookmarking of any list item
 
+### Desktop only
+`deepnotes-editor` doesn't work well on mobile browsers. That's because
+`draft-js` itself does not work well on mobile browsers.
+
 Usage -
 
 Install `deepnoter-editor`
