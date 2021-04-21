@@ -3,6 +3,10 @@ import { BlockMap, ContentBlock } from 'draft-js';
 
 import { calculateDepth } from './calculate_depth';
 
+// Warning: This function is very expensive. Don't use it for regular, repetitive operations.
+// Only use for one time operations like at the start of load, or while saving etc.
+// We are using it currently to add hasChildren information to a block when we initialize
+// the editor
 export function hasChildren(blockMap: BlockMap, blockKey: string): boolean {
   return !!blockMap.find(
     b => !!(b && b.getIn(['data', 'parentId']) === blockKey)

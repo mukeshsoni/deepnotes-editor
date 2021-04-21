@@ -137,6 +137,8 @@ npm start # or yarn start
 
 This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
 
+This does not start a server. It only watches your files and builds and puts them in dist folder when any file in src directory changes. To view the editor in action, you need to ru na server inside the example directory.
+
 Then run the example inside another:
 
 ```bash
@@ -144,6 +146,8 @@ cd example
 npm i # or yarn to install dependencies
 npm start # or yarn start
 ```
+
+The example is served on http://localhost:1234. If that port is busy, parcel might try starting the server on some other port.
 
 The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, [we use Parcel's aliasing](https://github.com/palmerhq/tsdx/pull/88/files).
 

@@ -14,7 +14,6 @@ interface Props {
     baseDepth: number;
     searchText?: string;
     hidden: boolean;
-    collapsible: boolean;
     onExpandClick: (blockKey: string) => void;
     onCollapseClick: (blockKey: string) => void;
   };
@@ -50,7 +49,6 @@ function areEqual(prevProps: Props, newProps: Props) {
     block: prevBlock,
     blockProps: {
       hidden: prevHidden,
-      collapsible: prevCollapsible,
       baseDepth: prevBaseDepth,
       searchText: prevSearchText,
     },
@@ -59,7 +57,6 @@ function areEqual(prevProps: Props, newProps: Props) {
     block: nextBlock,
     blockProps: {
       hidden: nextHidden,
-      collapsible: nextCollapsible,
       baseDepth: nextBaseDepth,
       searchText: nextSearchText,
     },
@@ -68,7 +65,6 @@ function areEqual(prevProps: Props, newProps: Props) {
   return (
     prevBlock === nextBlock &&
     prevHidden === nextHidden &&
-    prevCollapsible === nextCollapsible &&
     prevBaseDepth === nextBaseDepth &&
     prevSearchText === nextSearchText
   );
@@ -80,13 +76,13 @@ export const Item = React.memo((props: Props) => {
     onExpandClick,
     onCollapseClick,
     hidden,
-    collapsible,
     baseDepth,
     zoomedInItemId,
   } = blockProps;
 
   const collapsed = block.getIn(['data', 'collapsed']);
   const completed = block.getIn(['data', 'completed']);
+  const collapsible = block.getIn(['data', 'hasChildren']);
 
   /*
    * 7. When i try rendering the block on my own by wrapping the list item

@@ -12,8 +12,9 @@ import pluckGoodies from './pluck_goodies';
 import { getPosNum } from './pos_generators';
 import { getEmptySlateState } from './block_creators';
 import { createDecorators } from './decorators';
+import { hasChildren } from './tree_utils';
 
-function blocksWithSanitizedPos(
+function blocksWithSanitizedPosAndDepthAndHasChildren(
   blockMap: BlockMap,
   node: ContentBlock
 ): Array<ContentBlock> {
@@ -26,6 +27,7 @@ function blocksWithSanitizedPos(
     .map((block, index) => {
       return block
         .setIn(['data', 'pos'], getPosNum(index + 1))
+        .setIn(['data', 'hasChildren'], hasChildren(blockMap, block.getKey()))
         .set('depth', nodeDepth + 1);
     }) as Array<ContentBlock>;
 
@@ -35,7 +37,9 @@ function blocksWithSanitizedPos(
 
   return [node].concat(
     children
-      .map((child: ContentBlock) => blocksWithSanitizedPos(blockMap, child))
+      .map((child: ContentBlock) =>
+        blocksWithSanitizedPosAndDepthAndHasChildren(blockMap, child)
+      )
       .flat()
   );
 }
@@ -58,7 +62,10 @@ export function sanitizePosAndDepthInfo(
     return getEmptySlateState(ROOT_KEY);
   }
 
-  const blocks = blocksWithSanitizedPos(blockMap, blockMap.get(rootKey));
+  const blocks = blocksWithSanitizedPosAndDepthAndHasChildren(
+    blockMap,
+    blockMap.get(rootKey)
+  );
 
   const newEditorState = EditorState.createWithContent(
     ContentState.createFromBlockArray(blocks),

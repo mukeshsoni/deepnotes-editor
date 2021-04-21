@@ -1,7 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import {
-  BlockMap,
   DraftHandleValue,
   ContentBlock,
   Editor,
@@ -26,7 +25,6 @@ import { getBlocksWithItsDescendants } from '../tree_utils';
 import { splitBlock } from '../split_block';
 import { findParent } from '../find_parent';
 import { Item } from './Item';
-import { hasChildren } from '../tree_utils';
 import { pasteText } from '../paste_text';
 import { ROOT_KEY, SEARCH_DEBOUNCE } from '../../constants';
 import {
@@ -89,6 +87,11 @@ function notADescendantOfZoomedInItem(
   );
 }
 
+// This is the key to a faster blockShouldBeHidden function
+// TODO: Right now we are busting this cache on every render. We should find a way
+// to only bust it if required. That is, only bust it if there's an operation which might
+// spoil the data related to visibility.
+let shouldBeHiddenCache: { [key: string]: boolean } = {};
 function blockShouldBeHidden(
   editorState: EditorState,
   block: ContentBlock,
@@ -96,9 +99,18 @@ function blockShouldBeHidden(
   searchText?: string
 ) {
   const { blockMap } = pluckGoodies(editorState);
+  const parentId = block.getIn(['data', 'parentId']);
 
-  return (
+  if (shouldBeHiddenCache[parentId] !== undefined) {
+    // we set the hidden property of a zoomed in items parent also as hidden
+    // But we want to show the zoomed in item itself
+    return shouldBeHiddenCache[parentId] && block.getKey() !== zoomedInItemId;
+  }
+
+  const shouldBeHidden =
     block.getKey() === ROOT_KEY ||
+    // When zoomed in, anything below the zoomed in item level can be hidden
+    block.getDepth() < blockMap.get(zoomedInItemId).getDepth() ||
     (block.getKey() !== zoomedInItemId &&
       // we don't want to hide items inside collapsed parents if there is a
       // search text
@@ -109,12 +121,16 @@ function blockShouldBeHidden(
         .getText()
         .toLowerCase()
         .includes(searchText.toLowerCase())) ||
-    notADescendantOfZoomedInItem(editorState, block, zoomedInItemId)
-  );
-}
+    notADescendantOfZoomedInItem(editorState, block, zoomedInItemId);
 
-function isCollapsible(blockMap: BlockMap, block: ContentBlock) {
-  return hasChildren(blockMap, block.getKey());
+  if (block.getKey() !== ROOT_KEY) {
+    shouldBeHiddenCache[parentId] = shouldBeHidden;
+    if (shouldBeHidden) {
+      shouldBeHiddenCache[block.getKey()] = shouldBeHidden;
+    }
+  }
+
+  return shouldBeHidden;
 }
 
 const initialState = {
@@ -362,10 +378,6 @@ function DeepnotesEditor(props: Props) {
             contentBlock,
             zoomedInItemId,
             searchText
-          ),
-          collapsible: isCollapsible(
-            editorState.getCurrentContent().getBlockMap(),
-            contentBlock
           ),
           onExpandClick: expandParticularBlock,
           onCollapseClick: collapseParticularBlock,
@@ -639,7 +651,9 @@ function DeepnotesEditor(props: Props) {
           const pSibling = contentState.getBlockBefore(block.getKey());
 
           if (
-            hasChildren(blockMap, selectionState.getAnchorKey()) ||
+            blockMap
+              .get(selectionState.getAnchorKey())
+              .getIn(['data', 'hasChildren']) ||
             !pSibling ||
             // accounting for every present ROOT block
             blockMap.count() === 2 ||
