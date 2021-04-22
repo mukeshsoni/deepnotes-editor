@@ -11,6 +11,7 @@ import { ROOT_KEY } from '../constants';
 import { getPosNum, getPosAfter, getPosInBetween } from './pos_generators';
 import { recreateParentBlockMap } from './recreate_parent_block_map';
 import { calculateDepth } from './calculate_depth';
+import { adjustHasChildren } from './tree_utils';
 
 function getParentIdAfterAdjustment(
   contentState: ContentState,
@@ -96,6 +97,7 @@ function adjustBlockDepthForContentState(
   let blockMap = contentState.getBlockMap();
   let indentBlock = blockMap.get(indentBlockKey);
   const newDepth = calculateDepth(blockMap, indentBlockKey) + adjustment;
+  const oldParentId = indentBlock.getIn(['data', 'parentId']);
 
   // TODO: When we dedent an item which is in between it's other siblings,
   // we need to create the list of items from this dedented item's parent and
@@ -161,6 +163,13 @@ function adjustBlockDepthForContentState(
       ) as BlockMap;
     }
   }
+
+  // We want to adjust the hasChildren property of both the old parent block as well
+  // as the new parent block for the indented/dedented block
+  blockMap = adjustHasChildren(
+    adjustHasChildren(blockMap, oldParentId),
+    parentId
+  );
 
   return contentState.merge({
     blockMap,

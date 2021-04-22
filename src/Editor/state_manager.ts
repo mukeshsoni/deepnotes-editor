@@ -9,7 +9,11 @@ import {
 
 import pluckGoodies from './pluck_goodies';
 
-import { getBlocksWithItsDescendants, hasChildren } from './tree_utils';
+import {
+  getBlocksWithItsDescendants,
+  hasChildren,
+  adjustHasChildren,
+} from './tree_utils';
 import { moveCurrentBlockUp, moveCurrentBlockDown } from './move';
 import { collapseBlock, expandBlock } from './collapse_expand_block';
 // import { makeCorrectionsToNodeAndItsDescendants } from './make_corrections_to_node_and_its_descendants';
@@ -279,8 +283,9 @@ function deleteItemWithChildren(state: DeepnotesEditorState) {
   }
 
   const blocksToDelete = getBlocksWithItsDescendants(blockMap, focusKey);
+  const parentId = blockMap.get(focusKey).getIn(['data', 'parentId']);
 
-  const newBlockMap = blockMap
+  let newBlockMap = blockMap
     .toSeq()
     .filter((_: any, k?: string) => !!(k && !blocksToDelete.has(k)))
     .toOrderedMap();
@@ -315,6 +320,9 @@ function deleteItemWithChildren(state: DeepnotesEditorState) {
         .getKey()
     );
   }
+
+  // reset the hasChildren state of the parent block
+  newBlockMap = adjustHasChildren(newBlockMap, parentId);
 
   return {
     ...state,

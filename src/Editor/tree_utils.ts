@@ -13,6 +13,18 @@ export function hasChildren(blockMap: BlockMap, blockKey: string): boolean {
   );
 }
 
+export function adjustHasChildren(blockMap: BlockMap, blockKey: string) {
+  const block = blockMap.get(blockKey);
+
+  return blockMap.set(
+    blockKey,
+    block.setIn(
+      ['data', 'hasChildren'],
+      hasChildren(blockMap, blockKey)
+    ) as ContentBlock
+  ) as BlockMap;
+}
+
 // TODO: Is it a better idea to get all children, sortByPos, and then return the first block?
 // right now, we are relying on the fact that draft-js blocks are sorted by the order they appear in
 export function getFirstChild(
