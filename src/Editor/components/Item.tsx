@@ -133,7 +133,7 @@ export const Item = React.memo((props: Props) => {
       {/* I had to add display: 'block' to get the edit cursor to work on empty list item. 
 		Otherwise, the edit cursor was not visible on empty item. It would come after typing one 
 		charater */}
-      <div className={styles['item-container']} style={{ display: 'block' }}>
+      <div className={styles['item-container']}>
         <EditorBlock {...props} />
         {collapsible ? (
           !collapsed ? (
