@@ -359,6 +359,8 @@ function DeepnotesEditor(props: Props) {
     .get(zoomedInItemId)
     .getDepth();
 
+  shouldBeHiddenCache = {};
+
   function blockRendererFn(contentBlock: ContentBlock) {
     const type = contentBlock.getType();
 
