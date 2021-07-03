@@ -9,6 +9,8 @@ import { recreateParentBlockMap } from './recreate_parent_block_map';
 // TODO: add parentKey to the newly created blocks
 // TODO: add order to the newly created blocks
 // TODO: Write unit tests for this function
+// TODO: Adjust the hasChildren attribute of both the newly created block as well as their
+// parent blocks, in case the newly created block becomes a child of some block
 export function splitBlock(editorState: EditorState, zoomedInItemId: string) {
   const { contentState, selectionState, blockMap } = pluckGoodies(editorState);
 
