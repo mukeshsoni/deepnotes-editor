@@ -3,8 +3,6 @@ It's a clone of the [workflowy.com](https://workflowy.com) editor written in
 [draft-js](https://draftjs.org/). `deepnotes-editor` can be used as a react
 component.
 
-Here's a codesandbox demo link - https://codesandbox.io/s/deepnotes-editor-demo-t4gnm
-
 Here's a gif of how it works - 
 
 ![deepnotes editor demo](deepnotes-editor-demo.gif)
